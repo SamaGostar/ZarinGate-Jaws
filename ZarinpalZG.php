@@ -1,25 +1,25 @@
 <?php
 /**
- * ZarinPalWG gateway library
+ * ZarinPalZG gateway library
  *
  * @category    Gateway
  * @package     Gateway
  * @author      Mohsen Khahani <mkhahani@gmail.com>
  * @copyright   2013 Jaws Development Group
  * @license     http://www.gnu.org/copyleft/lesser.html
- * @version     ZarinPalWG.php v1.0 2013-03-15 11:00:00
+ * @version     ZarinPalZG.php v1.0 2013-03-15 11:00:00
  */
 
 /**
  * Constants
  */
-define('ZarinPalWG_SOAP_URL', 'https://www.ZarinPalWG.com/pg/services/WebGate/wsdl');
-define('ZarinPalWG_PAYMENT_URL', 'https://www.ZarinPalWG.com/pg/StartPay/');
+define('ZarinPalZG_SOAP_URL', 'https://www.ZarinPalZG.com/pg/services/WebGate/wsdl');
+define('ZarinPalZG_PAYMENT_URL', 'https://www.ZarinPalZG.com/pg/StartPay/');
 
 /**
- * ZarinPalWGGateway Class
+ * ZarinPalZGGateway Class
  */
-class ZarinPalWGGateway
+class ZarinPalZGGateway
 {
 
     /**
@@ -45,17 +45,17 @@ class ZarinPalWGGateway
      * @param   string  $merchant_id    Merchant ID
      * @return  void
      */
-    function ZarinPalWGGateway($merchant_id)
+    function ZarinPalZGGateway($merchant_id)
     {
         $this->_merchant_id = $merchant_id;
         $this->_connection = new SoapClient(
-            ZarinPalWG_SOAP_URL, 
+            ZarinPalZG_SOAP_URL, 
             array('encoding'=>'UTF-8')
         );
     }
 
     /**
-     * Sends transaction request unto ZarinPalWG gateway via SOAP connection
+     * Sends transaction request unto ZarinPalZG gateway via SOAP connection
      *
      * @access  public
      * @param   int     $amount         Amount
@@ -82,7 +82,7 @@ class ZarinPalWGGateway
 
 
     /**
-     * Redirects to ZarinPalWG payment page
+     * Redirects to ZarinPalZG payment page
      *
      * @access  public
      * @param   string  $trans_id   Transaction ID
@@ -91,7 +91,7 @@ class ZarinPalWGGateway
     function Pay($trans_id)
     {
         require_once JAWS_PATH . 'include/Jaws/Header.php';
-        Jaws_Header::Location(ZarinPalWG_PAYMENT_URL . $trans_id . '/ZarinGate');
+        Jaws_Header::Location(ZarinPalZG_PAYMENT_URL . $trans_id . '/ZarinGate');
     }
 
     /**
