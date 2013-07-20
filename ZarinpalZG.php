@@ -13,7 +13,7 @@
 /**
  * Constants
  */
-define('ZarinPalZG_SOAP_URL', 'https://www.ZarinPalZG.com/pg/services/WebGate/wsdl');
+define('ZarinPalZG_SOAP_URL', 'https://de.ZarinPalZG.com/pg/services/WebGate/wsdl');
 define('ZarinPalZG_PAYMENT_URL', 'https://www.ZarinPalZG.com/pg/StartPay/');
 
 /**
